@@ -1,0 +1,111 @@
+@charset "UTF-8";
+@font-face {
+  font-family: '源石黑體M';
+  src: url("../../asset/font/GenSekiGothic-M.ttc");
+}
+
+@font-face {
+  font-family: 'CascadiaCodePL-SemiBold';
+  src: url("../../asset/font/CascadiaCodePL-SemiBold.ttf");
+}
+
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.laningPageSection {
+  height: auto;
+}
+
+.marquee {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  width: 100vw;
+  height: auto;
+  border-bottom: black 1px solid;
+  overflow: hidden;
+  font-size: 21pt;
+  font-family: '源石黑體M';
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-weight: 700;
+}
+
+.landing__cart {
+  z-index: 10;
+  cursor: pointer;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  height: 78px;
+}
+
+.shopCart__cart {
+  position: fixed;
+  width: 312px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.intro {
+  margin-top: 90px;
+  margin-left: 67px;
+  position: fixed;
+}
+
+.intro .intro_chText,
+.intro .intro_enText {
+  font-family: '源石黑體M';
+  font-size: 12pt;
+  font-weight: 100;
+}
+
+.intro .intro_chText {
+  margin-bottom: 20px;
+}
+
+.intro .intro_enText {
+  width: 50%;
+  text-align: justify;
+}
+
+.logoTypes {
+  width: 70%;
+  position: relative;
+  float: right;
+  margin-top: 320px;
+}
+
+.logoTypes .logoTypes__logo1,
+.logoTypes .logoTypes__logo3 {
+  margin-bottom: 170px;
+}
+
+.logoTypes .logoTypes__logo2 {
+  margin-bottom: 100px;
+}
+
+.switchedImg {
+  position: fixed;
+  left: 67px;
+  bottom: 42px;
+  height: 175px;
+}
+
+.draggable {
+  position: absolute;
+  height: 150px;
+}
+
+.cashRegister {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  height: 100px;
+}
+/*# sourceMappingURL=style.css.map */
