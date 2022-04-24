@@ -110,4 +110,7 @@ function randomizeCommodity() {
 
 window.onload = function () {
   randomizeCommodity();
+  setTimeout(() => {
+    $('#shopCartBody').fadeTo(1000, 1);
+  }, 1000);
 };
