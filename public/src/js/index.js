@@ -6,7 +6,9 @@ $('.marquee-landing').marquee({
   duplicated: true,
   startVisible: true,
 });
-
+$('.landing__cart').click(function () {
+  location.href = 'shopCart';
+});
 
 const switchImgs = [
   'switchedImg_1',
@@ -17,13 +19,13 @@ const switchImgs = [
 let nowImg = 0;
 
 setInterval(() => {
-  // console.log(nowImg, $('.switchedImg').attr('src'));
+
   $('.switchedImg').attr(
     'src',
     `./asset/img/landingPage/${switchImgs[nowImg]}.webp`
   );
   if (nowImg === 3) {
-    nowImg = 1;
+    nowImg = 0;
   } else {
     nowImg += 1;
   }
