@@ -1,10 +1,10 @@
 var overLappingSpace = 150;
-if ($(document).width() <= 1200) {
-  overLappingSpace = 100;
+if ($(document).width() <= 1500) {
+  overLappingSpace = $(document).width() / 10;
 }
-if ($(document).width() <= 992) {
-  overLappingSpace = 50;
-}
+// if ($(document).width() <= 992) {
+//   overLappingSpace = 50;
+// }
 console.log(overLappingSpace);
 $('.marquee-shop').marquee({
   duration: 9000,
@@ -19,7 +19,6 @@ $('.draggable').draggable({
   containment: 'body',
   scroll: false,
 });
-
 $('.draggable').mouseover(function (e) {
   $('.commodityTag').css('display', 'flex');
   $('.commodityTag__rightWordBlock--content').text(
@@ -28,11 +27,9 @@ $('.draggable').mouseover(function (e) {
   $('.commodityTag__rightWordBlock--title').text(e.target.dataset.title);
   $('.commodityTag__leftNum--num').text(`(${e.target.dataset.num})`);
 });
-
 $('.draggable').mouseout(function (e) {
   $('.commodityTag').css('display', 'none');
 });
-
 $('.introScreen').click(function (e) {
   $('.introScreen').css('display', 'none');
 });
@@ -50,6 +47,7 @@ function Position(x, y) {
   this.x = x;
   this.y = y;
 }
+
 function isOverlapCart(newPX, newPY) {
   let isLappingCart =
     newPX > $('.shopCart__cart').position().left - 150 &&
@@ -78,8 +76,10 @@ function generatePositionsArray() {
   let windowWidth = $(document).width();
   let windowHeight = $(document).height();
 
-  let safeWidth = windowWidth - overLappingSpace - 50;
-  let safeHeight = windowHeight - overLappingSpace - 40;
+  // let safeWidth = windowWidth - overLappingSpace - 50;
+  // let safeHeight = windowHeight - overLappingSpace - 40;
+  let safeWidth = windowWidth - 150 - 50;
+  let safeHeight = windowHeight - 150 - 40;
   let positionArray = [];
   let newX = 0;
   let newY = 0;
@@ -104,6 +104,7 @@ function randomizeCommodity() {
   for (let i = 0; i < 17; i++) {
     $('.commodity')[i].style.left = `${imgPositions[i].x}px`;
     $('.commodity')[i].style.top = `${imgPositions[i].y}px`;
+    $('.commodity')[i].style.display = 'block';
   }
 }
 

@@ -22,6 +22,10 @@ body {
           user-select: none;
 }
 
+#shopCartBody {
+  overflow: hidden;
+}
+
 .laningPageSection {
   height: auto;
 }
@@ -35,16 +39,16 @@ body {
   height: auto;
   border-bottom: black 1px solid;
   overflow: hidden;
-  font-size: 17pt;
+  font-size: 16pt;
   font-family: '源石黑體M';
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   padding-top: 7px;
   padding-bottom: 7px;
   font-weight: 700;
 }
 
 .landing__cart {
-  z-index: 10;
+  z-index: 20;
   cursor: pointer;
   position: fixed;
   right: 25px;
@@ -57,6 +61,7 @@ body {
   margin-left: 67px;
   position: fixed;
   width: 40%;
+  z-index: 10;
 }
 
 .intro .intro_chText,
@@ -76,6 +81,7 @@ body {
 
 .logoTypes {
   width: 70%;
+  z-index: 12;
   position: relative;
   float: right;
   margin-top: 320px;
@@ -95,6 +101,7 @@ body {
   left: 67px;
   bottom: 42px;
   height: 246px;
+  z-index: 1;
 }
 
 .shopCartSection {
@@ -117,7 +124,7 @@ body {
   height: auto;
   color: white;
   background-color: rgba(95, 95, 95, 0.6);
-  z-index: 20;
+  z-index: 30;
   padding: 12px 24px;
   letter-spacing: 2px;
   font-size: 8pt;
@@ -178,6 +185,7 @@ body {
   left: 0;
   max-width: 150px;
   max-height: 150px;
+  display: none;
 }
 
 .shopCartSection .cashRegister {
