@@ -8,6 +8,10 @@ $color_red: rgb(255, 0, 25);
   src: url('../../asset/font/GenSekiGothic-R.ttc');
 }
 @font-face {
+  font-family: '源石黑體L';
+  src: url('../../asset/font/GenSekiGothic-L.ttc');
+}
+@font-face {
   font-family: 'CascadiaCodePL-SemiBold';
   src: url('../../asset/font/CascadiaCodePL-SemiBold.ttf');
 }
@@ -30,7 +34,7 @@ body {
 }
 
 .marquee {
-  z-index: 100;
+  z-index: 50;
   position: fixed;
   top: 0;
   background-color: #fff;
@@ -45,6 +49,11 @@ body {
   padding-top: 7px;
   padding-bottom: 7px;
   font-weight: 700;
+  @media only screen and (max-width: 572px) {
+    height: 26px;
+    padding-top: 4px;
+    padding-bottom: 0px;
+  }
 }
 
 .landing__cart {
@@ -55,6 +64,11 @@ body {
   bottom: 25px;
   height: 78px;
   // size of cart to be checked
+  @media only screen and (max-width: 572px) {
+    height: 56px;
+    right: 16px;
+    bottom: 21px;
+  }
 }
 
 .intro {
@@ -65,7 +79,6 @@ body {
   z-index: 2;
   .intro_chText,
   .intro_enText {
-    // font-size to be checked
     font-family: '源石黑體M';
     font-size: 10pt;
     font-weight: 500;
@@ -76,12 +89,20 @@ body {
   .intro_enText {
     text-align: justify;
   }
+  @media only screen and (max-width: 572px) {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100%;
+    .intro_chText,
+    .intro_enText {
+      font-family: '源石黑體L';
+    }
+  }
 }
 
 .logoTypes {
   width: 70%;
   z-index: 3;
-
   position: relative;
   float: right;
   margin-top: 320px;
@@ -92,6 +113,9 @@ body {
   .logoTypes__logo2 {
     margin-bottom: 100px;
   }
+  // @media only screen and (max-width: 572px) {
+  //   width: 72%;
+  // }
 }
 
 .switchedImg {
@@ -101,11 +125,27 @@ body {
   height: 246px;
   z-index: 1;
   // to be checked
+  @media only screen and (max-width: 572px) {
+    height: 150px;
+    left: 15px;
+    bottom: 37%;
+  }
+}
+
+@keyframes checkingOutShine {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .shopCartSection {
   height: 100vh;
-
   .commodityTag {
     border-radius: 10px;
     display: flex;
@@ -177,7 +217,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 20;
+    z-index: 60;
     background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: center;
@@ -227,6 +267,39 @@ body {
           font-weight: 100;
           color: $color_red;
         }
+      }
+    }
+  }
+  .checkoutScreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 40;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: none;
+    //display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color_red;
+    font-family: 'CascadiaCodePL-SemiBold';
+    font-size: 60pt;
+    font-weight: 100;
+    text-align: center;
+    .checking {
+      font-family: '源石黑體M';
+      font-size: 21pt;
+      font-weight: 100;
+      text-align: center;
+      animation-name: checkingOutShine; /*動畫名稱，需與 keyframe 名稱對應*/
+      animation-duration: 1s; /*動畫持續時間，單位為秒*/
+      animation-iteration-count: infinite; /*動畫次數，infinite 為無限次*/
+    }
+    .priceWord {
+      display: none;
+      .totalPrice {
+        margin-right: 32px;
+        margin-left: 8px;
+        letter-spacing: 8px;
       }
     }
   }

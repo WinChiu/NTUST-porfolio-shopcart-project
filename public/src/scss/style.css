@@ -10,6 +10,11 @@
 }
 
 @font-face {
+  font-family: '源石黑體L';
+  src: url("../../asset/font/GenSekiGothic-L.ttc");
+}
+
+@font-face {
   font-family: 'CascadiaCodePL-SemiBold';
   src: url("../../asset/font/CascadiaCodePL-SemiBold.ttf");
 }
@@ -32,7 +37,7 @@ body {
 }
 
 .marquee {
-  z-index: 100;
+  z-index: 50;
   position: fixed;
   top: 0;
   background-color: #fff;
@@ -48,6 +53,14 @@ body {
   font-weight: 700;
 }
 
+@media only screen and (max-width: 572px) {
+  .marquee {
+    height: 26px;
+    padding-top: 4px;
+    padding-bottom: 0px;
+  }
+}
+
 .landing__cart {
   z-index: 20;
   cursor: pointer;
@@ -55,6 +68,14 @@ body {
   right: 25px;
   bottom: 25px;
   height: 78px;
+}
+
+@media only screen and (max-width: 572px) {
+  .landing__cart {
+    height: 56px;
+    right: 16px;
+    bottom: 21px;
+  }
 }
 
 .intro {
@@ -80,6 +101,18 @@ body {
   text-align: justify;
 }
 
+@media only screen and (max-width: 572px) {
+  .intro {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100%;
+  }
+  .intro .intro_chText,
+  .intro .intro_enText {
+    font-family: '源石黑體L';
+  }
+}
+
 .logoTypes {
   width: 70%;
   z-index: 3;
@@ -103,6 +136,38 @@ body {
   bottom: 42px;
   height: 246px;
   z-index: 1;
+}
+
+@media only screen and (max-width: 572px) {
+  .switchedImg {
+    height: 150px;
+    left: 15px;
+    bottom: 37%;
+  }
+}
+
+@-webkit-keyframes checkingOutShine {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes checkingOutShine {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .shopCartSection {
@@ -202,7 +267,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 20;
+  z-index: 60;
   background-color: rgba(255, 255, 255, 0.8);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -282,5 +347,51 @@ body {
   font-size: 16pt;
   font-weight: 100;
   color: #ff0019;
+}
+
+.shopCartSection .checkoutScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 40;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ff0019;
+  font-family: 'CascadiaCodePL-SemiBold';
+  font-size: 60pt;
+  font-weight: 100;
+  text-align: center;
+}
+
+.shopCartSection .checkoutScreen .checking {
+  font-family: '源石黑體M';
+  font-size: 21pt;
+  font-weight: 100;
+  text-align: center;
+  -webkit-animation-name: checkingOutShine;
+          animation-name: checkingOutShine;
+  /*動畫名稱，需與 keyframe 名稱對應*/
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  /*動畫持續時間，單位為秒*/
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  /*動畫次數，infinite 為無限次*/
+}
+
+.shopCartSection .checkoutScreen .priceWord {
+  display: none;
+}
+
+.shopCartSection .checkoutScreen .priceWord .totalPrice {
+  margin-right: 32px;
+  margin-left: 8px;
+  letter-spacing: 8px;
 }
 /*# sourceMappingURL=style.css.map */

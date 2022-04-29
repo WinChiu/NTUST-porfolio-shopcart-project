@@ -19,7 +19,6 @@ const switchImgs = [
 let nowImg = 0;
 
 setInterval(() => {
-
   $('.switchedImg').attr(
     'src',
     `./asset/img/landingPage/${switchImgs[nowImg]}.webp`
@@ -29,4 +28,4 @@ setInterval(() => {
   } else {
     nowImg += 1;
   }
-}, 500);
+}, 800);
